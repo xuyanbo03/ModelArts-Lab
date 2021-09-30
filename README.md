@@ -1,18 +1,22 @@
+# <font color='red'>更多最新的AI开发学习交流信息，请访问华为云AI开发者社区：[AI Gallery](www.huaweicloud.ai)</font>
+
+#### 如果您访问github较慢，可以访问gitee代码库地址，内容完全一致：https://gitee.com/ModelArts/ModelArts-Lab
+
+------
+
+
+
 # ModelArts-Lab
+基于华为云ModelArts平台的示例代码库。
 
-此库是AI开发者交流和学习平台，所有案例、样例代码是基于业界领先的AI开发平台ModelArts设计，帮助AI开发者快速掌握人工智能实战技能。
-This library is an AI developer communication and learning platform for ModelArts. All cases and sample code are designed based on the industry-leading AI development platform ModelArts (huawei cloud), helping AI developers to quickly master the artificial intelligence skills.
-
-Visit count: [![HitCount](http://hits.dwyl.io/chenliang613/huaweicloud/ModelArts-Lab.svg)](http://hits.dwyl.io/chenliang613/huaweicloud/ModelArts-Lab)
+此库提供的案例包括代码以及数据集均只能用于学习交流，案例数据集来自于开源社区，所有案例及数据集请勿用于除学习之外的其他商业用途，如果违反所产生的法律纠纷与提供方无关。
 
 ## Online Documents
+* [ModelArts准备工作](docs/ModelArts准备工作)
 * [MoXing-API](docs/moxing_api_doc)
 * [FAQs](docs/faqs.md) 
-* [贡献者积分，积分兑换活动11月10日结束](merit_rank/all_ranking.md) 
 
 ## 案例内容介绍 Introduction of Cases
-
-### [16期实战营活动，积分兑换活动11月10日结束](https://github.com/huaweicloud/ModelArts-Lab/issues?q=is%3Aissue+is%3Aopen+label%3A"华为云+ModelArts-Lab+AI实战营")
 
 ### 自动学习案例 ExeML Cases
 AI要规模化走进各行各业，必须要降低AI模型开发难度和门槛。当前仅少数算法工程师和研究员掌握AI的开发和调优能力，并且大多数算法工程师仅掌握算法原型开发能力，缺少相关的原型到真正产品化、工程化的能力。而对于大多数业务开发者来说，更是不具备AI算法的开发和参数调优能力。这导致大多数企业都不具备AI开发能力。

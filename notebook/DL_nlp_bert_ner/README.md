@@ -1,8 +1,5 @@
   # 自然语言处理 —— 命名实体识别
   
-  从本期实战营开始，我们进入到人工智能的另一大重要领域——自然语言处理（NLP，Natural Language Processing）。
-
-  第一期自然语言处理的任务为命名实体识别（NER，Named Entity Recognition）。
 
   ## 数据集
   
@@ -21,6 +18,6 @@
   
   ## 实战内容
   
-  [自然语言处理实战——命名实体识别](https://github.com/huaweicloud/ModelArts-Lab/blob/master/notebook/DL_nlp_bert_ner/ner.ipynb)
+  [自然语言处理——命名实体识别](./nlp_ner.ipynb)
   
   

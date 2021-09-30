@@ -10,18 +10,21 @@ from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.mllib.recommendation import ALS, Rating
 from pyspark.sql.functions import expr
 
+import moxing.framework.cloud_utils as cloud_utils
+
 # get the OBS configuration from system environment variables
+sec_info = cloud_utils.get_auth()
 AK = os.getenv('MINER_USER_ACCESS_KEY')
 if AK is None:
-    AK = ''
+    AK = sec_info.AK
 
 SK = os.getenv('MINER_USER_SECRET_ACCESS_KEY')
 if SK is None:
-    SK = ''
+    SK = sec_info.SK
 
 obs_endpoint = os.getenv('MINER_OBS_URL')
 if obs_endpoint is None:
-    obs_endpoint = ''
+    obs_endpoint = os.getenv('S3_ENDPOINT')
 print("obs_endpoint: " + str(obs_endpoint))
 
 obs_path = os.getenv('TRAIN_URL')
@@ -49,7 +52,7 @@ metric_dic = {}
 
 # start local Spark
 spark = pyspark.sql.SparkSession.builder.config("spark.driver.host", "localhost").master("local[*]").appName(
-    "product recommendation").getOrCreate()
+    "product_recommendation").getOrCreate()
 sc = spark.sparkContext
 
 
@@ -165,7 +168,7 @@ def create_config():
     :return:
     """
     schema_model = json.loads(
-        '{"model_algorithm":"Product Recommendation","model_source":"custom","tunable":"false","model_type":"Spark_MLlib","metrics":{},"apis":[{"protocol":"http","url":"/","method":"post","request":{"Content-type":"application/json","data":{"type":"object","properties":{"data":{"type":"object","properties":{"req_data":{"type":"array","items":[{"type":"object","properties":{"input_1":{"type":"number"},"input_2":{"type":"number"},"input_3":{"type":"number"},"input_4":{"type":"number"}}}]}}}}}},"response":{"Content-type":"application/json","data":{"type":"object","properties":{"resp_data":{"type":"array","items":[{"type":"object","properties":{"predictresult":{"type":"number"}}}]}}}}}]}',
+        '{"model_algorithm":"product_recommendation","model_source":"custom","tunable":"false","model_type":"Spark_MLlib","metrics":{},"apis":[{"protocol":"http","url":"/","method":"post","request":{"Content-type":"application/json","data":{"type":"object","properties":{"data":{"type":"object","properties":{"req_data":{"type":"array","items":[{"type":"object","properties":{"input_1":{"type":"number"},"input_2":{"type":"number"},"input_3":{"type":"number"},"input_4":{"type":"number"}}}]}}}}}},"response":{"Content-type":"application/json","data":{"type":"object","properties":{"resp_data":{"type":"array","items":[{"type":"object","properties":{"predictresult":{"type":"number"}}}]}}}}}]}',
         object_pairs_hook=OrderedDict)
 
     res_properties = collections.OrderedDict()
